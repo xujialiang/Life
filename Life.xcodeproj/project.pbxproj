@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24ECDB5346D432FB8084F445 /* libPods-Life.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E41DE9433C70DA187724A74B /* libPods-Life.a */; };
+		6C97134F1C03F52B00A0921B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C97134E1C03F52B00A0921B /* main.m */; };
+		6C9713521C03F52B00A0921B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713511C03F52B00A0921B /* AppDelegate.m */; };
+		6C9713581C03F52B00A0921B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C9713561C03F52B00A0921B /* Main.storyboard */; };
+		6C97135A1C03F52B00A0921B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C9713591C03F52B00A0921B /* Assets.xcassets */; };
+		6C97135D1C03F52C00A0921B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C97135B1C03F52C00A0921B /* LaunchScreen.storyboard */; };
+		6C97136D1C04018D00A0921B /* LBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C97136C1C04018D00A0921B /* LBaseViewController.m */; };
+		6C9713711C0401B500A0921B /* LTimelinesRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713701C0401B500A0921B /* LTimelinesRootViewController.m */; };
+		6C9713741C0401CA00A0921B /* LBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713731C0401CA00A0921B /* LBaseCell.m */; };
+		6C9713781C04021300A0921B /* LTimelinesTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713771C04021300A0921B /* LTimelinesTextCell.m */; };
+		6C97137F1C040B4500A0921B /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C97137E1C040B4500A0921B /* BaseView.m */; };
+		6C9713821C040C4200A0921B /* LBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713811C040C4200A0921B /* LBaseViewModel.m */; };
+		6C9713871C040F4300A0921B /* LTimelinesRootViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713861C040F4300A0921B /* LTimelinesRootViewModel.m */; };
+		6C97138C1C04275E00A0921B /* LBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C97138B1C04275E00A0921B /* LBaseLayout.m */; };
+		6C97138F1C04278900A0921B /* LTimelinesLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C97138E1C04278900A0921B /* LTimelinesLayout.m */; };
+		6C9713921C0447BF00A0921B /* LBaseDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713911C0447BF00A0921B /* LBaseDTO.m */; };
+		6C9713951C044E0500A0921B /* LUserDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713941C044E0500A0921B /* LUserDTO.m */; };
+		6C9713991C044EA100A0921B /* LTimelinesDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9713981C044EA100A0921B /* LTimelinesDTO.m */; };
+		6C97139C1C04621400A0921B /* LCommentDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C97139B1C04621400A0921B /* LCommentDTO.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		20A2466BCA1F2E69CCA45126 /* Pods-Life.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life.release.xcconfig"; path = "Pods/Target Support Files/Pods-Life/Pods-Life.release.xcconfig"; sourceTree = "<group>"; };
+		293E57BE963167C24459EC86 /* Pods-Life.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Life.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Life/Pods-Life.debug.xcconfig"; sourceTree = "<group>"; };
+		6C97134A1C03F52B00A0921B /* Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Life.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C97134E1C03F52B00A0921B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6C9713501C03F52B00A0921B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Life/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		6C9713511C03F52B00A0921B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Life/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		6C9713571C03F52B00A0921B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6C9713591C03F52B00A0921B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
+		6C97135C1C03F52C00A0921B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6C97135E1C03F52C00A0921B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		6C97136B1C04018D00A0921B /* LBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBaseViewController.h; sourceTree = "<group>"; };
+		6C97136C1C04018D00A0921B /* LBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBaseViewController.m; sourceTree = "<group>"; };
+		6C97136F1C0401B500A0921B /* LTimelinesRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTimelinesRootViewController.h; sourceTree = "<group>"; };
+		6C9713701C0401B500A0921B /* LTimelinesRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTimelinesRootViewController.m; sourceTree = "<group>"; };
+		6C9713721C0401CA00A0921B /* LBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBaseCell.h; sourceTree = "<group>"; };
+		6C9713731C0401CA00A0921B /* LBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBaseCell.m; sourceTree = "<group>"; };
+		6C9713761C04021300A0921B /* LTimelinesTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTimelinesTextCell.h; sourceTree = "<group>"; };
+		6C9713771C04021300A0921B /* LTimelinesTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTimelinesTextCell.m; sourceTree = "<group>"; };
+		6C97137D1C040B4500A0921B /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		6C97137E1C040B4500A0921B /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		6C9713801C040C4200A0921B /* LBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBaseViewModel.h; sourceTree = "<group>"; };
+		6C9713811C040C4200A0921B /* LBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBaseViewModel.m; sourceTree = "<group>"; };
+		6C9713851C040F4300A0921B /* LTimelinesRootViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTimelinesRootViewModel.h; sourceTree = "<group>"; };
+		6C9713861C040F4300A0921B /* LTimelinesRootViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTimelinesRootViewModel.m; sourceTree = "<group>"; };
+		6C97138A1C04275E00A0921B /* LBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBaseLayout.h; sourceTree = "<group>"; };
+		6C97138B1C04275E00A0921B /* LBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBaseLayout.m; sourceTree = "<group>"; };
+		6C97138D1C04278900A0921B /* LTimelinesLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTimelinesLayout.h; sourceTree = "<group>"; };
+		6C97138E1C04278900A0921B /* LTimelinesLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTimelinesLayout.m; sourceTree = "<group>"; };
+		6C9713901C0447BF00A0921B /* LBaseDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBaseDTO.h; sourceTree = "<group>"; };
+		6C9713911C0447BF00A0921B /* LBaseDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBaseDTO.m; sourceTree = "<group>"; };
+		6C9713931C044E0500A0921B /* LUserDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUserDTO.h; sourceTree = "<group>"; };
+		6C9713941C044E0500A0921B /* LUserDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUserDTO.m; sourceTree = "<group>"; };
+		6C9713971C044EA100A0921B /* LTimelinesDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTimelinesDTO.h; sourceTree = "<group>"; };
+		6C9713981C044EA100A0921B /* LTimelinesDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTimelinesDTO.m; sourceTree = "<group>"; };
+		6C97139A1C04621400A0921B /* LCommentDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCommentDTO.h; sourceTree = "<group>"; };
+		6C97139B1C04621400A0921B /* LCommentDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCommentDTO.m; sourceTree = "<group>"; };
+		E41DE9433C70DA187724A74B /* libPods-Life.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Life.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C9713471C03F52B00A0921B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24ECDB5346D432FB8084F445 /* libPods-Life.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4600938C31BE807E0ACBC9F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E41DE9433C70DA187724A74B /* libPods-Life.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C9713411C03F52B00A0921B = {
+			isa = PBXGroup;
+			children = (
+				6C97134C1C03F52B00A0921B /* Life */,
+				6C97134B1C03F52B00A0921B /* Products */,
+				DB5B65B10C57C078B83EBF7A /* Pods */,
+				4600938C31BE807E0ACBC9F1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6C97134B1C03F52B00A0921B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C97134A1C03F52B00A0921B /* Life.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C97134C1C03F52B00A0921B /* Life */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713791C0406AC00A0921B /* App */,
+				6C9713641C03F98800A0921B /* 3rd */,
+				6C9713651C03F98800A0921B /* Controller */,
+				6C9713661C03F98800A0921B /* DTO */,
+				6C9713671C03F98800A0921B /* Service */,
+				6C9713681C03F98800A0921B /* View */,
+				6C9713691C03F98800A0921B /* ViewModel */,
+				6C97134D1C03F52B00A0921B /* Supporting Files */,
+			);
+			path = Life;
+			sourceTree = "<group>";
+		};
+		6C97134D1C03F52B00A0921B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C97134E1C03F52B00A0921B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C9713641C03F98800A0921B /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3rd;
+			sourceTree = "<group>";
+		};
+		6C9713651C03F98800A0921B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6C97136B1C04018D00A0921B /* LBaseViewController.h */,
+				6C97136C1C04018D00A0921B /* LBaseViewController.m */,
+				6C97136E1C0401A000A0921B /* Timelines */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6C9713661C03F98800A0921B /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713901C0447BF00A0921B /* LBaseDTO.h */,
+				6C9713911C0447BF00A0921B /* LBaseDTO.m */,
+				6C9713961C044E8E00A0921B /* Timelines */,
+				6C9713931C044E0500A0921B /* LUserDTO.h */,
+				6C9713941C044E0500A0921B /* LUserDTO.m */,
+				6C97139A1C04621400A0921B /* LCommentDTO.h */,
+				6C97139B1C04621400A0921B /* LCommentDTO.m */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		6C9713671C03F98800A0921B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6C9713681C03F98800A0921B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C97137D1C040B4500A0921B /* BaseView.h */,
+				6C97137E1C040B4500A0921B /* BaseView.m */,
+				6C9713881C04272A00A0921B /* Layout */,
+				6C97136A1C04017700A0921B /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6C9713691C03F98800A0921B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713801C040C4200A0921B /* LBaseViewModel.h */,
+				6C9713811C040C4200A0921B /* LBaseViewModel.m */,
+				6C9713841C040F2100A0921B /* Timelines */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6C97136A1C04017700A0921B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713721C0401CA00A0921B /* LBaseCell.h */,
+				6C9713731C0401CA00A0921B /* LBaseCell.m */,
+				6C9713751C0401D800A0921B /* Timelines */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6C97136E1C0401A000A0921B /* Timelines */ = {
+			isa = PBXGroup;
+			children = (
+				6C97136F1C0401B500A0921B /* LTimelinesRootViewController.h */,
+				6C9713701C0401B500A0921B /* LTimelinesRootViewController.m */,
+			);
+			path = Timelines;
+			sourceTree = "<group>";
+		};
+		6C9713751C0401D800A0921B /* Timelines */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713761C04021300A0921B /* LTimelinesTextCell.h */,
+				6C9713771C04021300A0921B /* LTimelinesTextCell.m */,
+			);
+			path = Timelines;
+			sourceTree = "<group>";
+		};
+		6C9713791C0406AC00A0921B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713501C03F52B00A0921B /* AppDelegate.h */,
+				6C9713511C03F52B00A0921B /* AppDelegate.m */,
+				6C9713561C03F52B00A0921B /* Main.storyboard */,
+				6C9713591C03F52B00A0921B /* Assets.xcassets */,
+				6C97135B1C03F52C00A0921B /* LaunchScreen.storyboard */,
+				6C97135E1C03F52C00A0921B /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6C9713841C040F2100A0921B /* Timelines */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713851C040F4300A0921B /* LTimelinesRootViewModel.h */,
+				6C9713861C040F4300A0921B /* LTimelinesRootViewModel.m */,
+			);
+			path = Timelines;
+			sourceTree = "<group>";
+		};
+		6C9713881C04272A00A0921B /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				6C97138A1C04275E00A0921B /* LBaseLayout.h */,
+				6C97138B1C04275E00A0921B /* LBaseLayout.m */,
+				6C9713891C04273D00A0921B /* Timelines */,
+			);
+			name = Layout;
+			path = Life/Layout;
+			sourceTree = SOURCE_ROOT;
+		};
+		6C9713891C04273D00A0921B /* Timelines */ = {
+			isa = PBXGroup;
+			children = (
+				6C97138D1C04278900A0921B /* LTimelinesLayout.h */,
+				6C97138E1C04278900A0921B /* LTimelinesLayout.m */,
+			);
+			path = Timelines;
+			sourceTree = "<group>";
+		};
+		6C9713961C044E8E00A0921B /* Timelines */ = {
+			isa = PBXGroup;
+			children = (
+				6C9713971C044EA100A0921B /* LTimelinesDTO.h */,
+				6C9713981C044EA100A0921B /* LTimelinesDTO.m */,
+			);
+			path = Timelines;
+			sourceTree = "<group>";
+		};
+		DB5B65B10C57C078B83EBF7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				293E57BE963167C24459EC86 /* Pods-Life.debug.xcconfig */,
+				20A2466BCA1F2E69CCA45126 /* Pods-Life.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C9713491C03F52B00A0921B /* Life */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C9713611C03F52C00A0921B /* Build configuration list for PBXNativeTarget "Life" */;
+			buildPhases = (
+				0C8C7AB33E38AF22FF655D89 /* Check Pods Manifest.lock */,
+				6C9713461C03F52B00A0921B /* Sources */,
+				6C9713471C03F52B00A0921B /* Frameworks */,
+				6C9713481C03F52B00A0921B /* Resources */,
+				5530CC897FB0118F47790707 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Life;
+			productName = Life;
+			productReference = 6C97134A1C03F52B00A0921B /* Life.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C9713421C03F52B00A0921B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = xujialiang;
+				TargetAttributes = {
+					6C9713491C03F52B00A0921B = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 6C9713451C03F52B00A0921B /* Build configuration list for PBXProject "Life" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C9713411C03F52B00A0921B;
+			productRefGroup = 6C97134B1C03F52B00A0921B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C9713491C03F52B00A0921B /* Life */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C9713481C03F52B00A0921B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C97135D1C03F52C00A0921B /* LaunchScreen.storyboard in Resources */,
+				6C97135A1C03F52B00A0921B /* Assets.xcassets in Resources */,
+				6C9713581C03F52B00A0921B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C8C7AB33E38AF22FF655D89 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5530CC897FB0118F47790707 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Life/Pods-Life-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C9713461C03F52B00A0921B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C9713521C03F52B00A0921B /* AppDelegate.m in Sources */,
+				6C97134F1C03F52B00A0921B /* main.m in Sources */,
+				6C9713871C040F4300A0921B /* LTimelinesRootViewModel.m in Sources */,
+				6C97137F1C040B4500A0921B /* BaseView.m in Sources */,
+				6C9713711C0401B500A0921B /* LTimelinesRootViewController.m in Sources */,
+				6C97136D1C04018D00A0921B /* LBaseViewController.m in Sources */,
+				6C9713781C04021300A0921B /* LTimelinesTextCell.m in Sources */,
+				6C9713821C040C4200A0921B /* LBaseViewModel.m in Sources */,
+				6C9713741C0401CA00A0921B /* LBaseCell.m in Sources */,
+				6C9713991C044EA100A0921B /* LTimelinesDTO.m in Sources */,
+				6C9713951C044E0500A0921B /* LUserDTO.m in Sources */,
+				6C97138C1C04275E00A0921B /* LBaseLayout.m in Sources */,
+				6C97138F1C04278900A0921B /* LTimelinesLayout.m in Sources */,
+				6C97139C1C04621400A0921B /* LCommentDTO.m in Sources */,
+				6C9713921C0447BF00A0921B /* LBaseDTO.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6C9713561C03F52B00A0921B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C9713571C03F52B00A0921B /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6C97135B1C03F52C00A0921B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C97135C1C03F52C00A0921B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C97135F1C03F52C00A0921B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6C9713601C03F52C00A0921B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C9713621C03F52C00A0921B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 293E57BE963167C24459EC86 /* Pods-Life.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Life/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.xujialiang.Life;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6C9713631C03F52C00A0921B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20A2466BCA1F2E69CCA45126 /* Pods-Life.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Life/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.xujialiang.Life;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C9713451C03F52B00A0921B /* Build configuration list for PBXProject "Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C97135F1C03F52C00A0921B /* Debug */,
+				6C9713601C03F52C00A0921B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C9713611C03F52C00A0921B /* Build configuration list for PBXNativeTarget "Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C9713621C03F52C00A0921B /* Debug */,
+				6C9713631C03F52C00A0921B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C9713421C03F52B00A0921B /* Project object */;
+}
