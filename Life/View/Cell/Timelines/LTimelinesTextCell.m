@@ -104,6 +104,7 @@
     _dataDTO = dataDTO;
     [_picContainer removeFromSuperview];
     [_gpsInfoLabel removeFromSuperview];
+    [_notifyPerson removeFromSuperview];
     if (dataDTO.photoURLs && dataDTO.photoURLs.count>0 ) {
         _picContainer = [UIView new];
         _picContainer.left = 74;
@@ -149,6 +150,24 @@
         };
         [_contentView addSubview:_gpsInfoLabel];
     }
+    
+    if (dataDTO.notifyPerson) {
+        _notifyPerson = [YYLabel new];
+        _notifyPerson.left = 74;
+        _notifyPerson.textColor = UIColorHex(6b7292);
+        _notifyPerson.width = kScreenWidth-100;
+        _notifyPerson.textVerticalAlignment = YYTextVerticalAlignmentTop;
+        _notifyPerson.displaysAsynchronously = YES;
+        _notifyPerson.ignoreCommonProperties = YES;
+        _notifyPerson.fadeOnAsynchronouslyDisplay = NO;
+        _notifyPerson.fadeOnHighlight = NO;
+        _notifyPerson.highlightTapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
+            //        if ([weak_self.cell.delegate respondsToSelector:@selector(cell:didClickInLabel:textRange:)]) {
+            //            [weak_self.cell.delegate cell:weak_self.cell didClickInLabel:(YYLabel *)containerView textRange:range];
+            //        }
+        };
+        [_contentView addSubview:_notifyPerson];
+    }
 }
 
 - (void)setLayout:(LTimelinesLayout *)layout {
@@ -183,6 +202,11 @@
     _gpsInfoLabel.height = layout.gpsInfoHeight;
     _gpsInfoLabel.textLayout = layout.gpsInfoLayout;
     top += layout.gpsInfoHeight;
+    
+    _notifyPerson.top = top;
+    _notifyPerson.height = layout.notifyPersonHeight;
+    _notifyPerson.textLayout = layout.notifyPersonLayout;
+    top += layout.notifyPersonHeight;
     
     _toolbarView.top = top;
     _toolbarView.height = layout.toolbarHeight;

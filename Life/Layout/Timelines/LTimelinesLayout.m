@@ -40,6 +40,7 @@
     _textHeight = 0;
     _photoHeight = 0;
     _gpsInfoHeight = 0;
+    _notifyPersonHeight=0;
     _fwdCardHeight = 0;
     _toolbarHeight = kLCellToolbarHeight;
     _commentsHeight = 0;
@@ -51,8 +52,8 @@
     [self _layoutText];
     [self _layoutPhotos];
     [self _layoutGPSInfo];
+    [self _layoutNotifyPerson];
     [self _layoutToolbar];
-    
     
     
     // 计算高度
@@ -62,6 +63,7 @@
     _height += _textHeight;
     _height += _photoHeight;
     _height += _gpsInfoHeight;
+    _height += _notifyPersonHeight;
     _height += _toolbarHeight;
     _height += _marginBottom;
 }
@@ -184,6 +186,37 @@
         
         _gpsInfoHeight = [modifier heightForLineCount:_gpsInfoLayout.rowCount];
 
+    }
+}
+
+- (void)_layoutNotifyPerson{
+    if (self.dto.notifyPerson && self.dto.notifyPerson.count>0) {
+        UIFont *font = [UIFont systemFontOfSize:12];
+        
+        NSString *result = @"提到了:";
+        for (LUserDTO *dto in self.dto.notifyPerson) {
+            result = [[result stringByAppendingString:dto.username] stringByAppendingString:@","];
+        }
+        result = [result substringToIndex:result.length-1];
+        
+        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:result];
+        text.font = font;
+        text.color = UIColorHex(747474);
+        if (text.length == 0) return;
+        
+        LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
+        modifier.font = [UIFont fontWithName:@"Heiti SC" size:12];
+        modifier.paddingTop = 10;
+        modifier.paddingBottom = 10;
+        
+        YYTextContainer *container = [YYTextContainer new];
+        container.size = CGSizeMake(kScreenWidth-100, HUGE);
+        container.linePositionModifier = modifier;
+        
+        _notifyPersonLayout = [YYTextLayout layoutWithContainer:container text:text];
+        if (!_notifyPersonLayout) return;
+        
+        _notifyPersonHeight = [modifier heightForLineCount:_notifyPersonLayout.rowCount];
     }
 }
 @end

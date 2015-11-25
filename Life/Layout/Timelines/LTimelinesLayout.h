@@ -40,6 +40,10 @@
 @property (nonatomic, assign) CGFloat gpsInfoHeight; //文本高度(包括下方留白)
 @property (nonatomic, strong) YYTextLayout *gpsInfoLayout; //文本
 
+// 提到了xx人
+@property (nonatomic, assign) CGFloat notifyPersonHeight; //文本高度(包括下方留白)
+@property (nonatomic, strong) YYTextLayout *notifyPersonLayout; //文本
+
 // 工具栏
 @property (nonatomic, assign) CGFloat toolbarHeight; // 工具栏
 @property (nonatomic, strong) YYTextLayout *dateTimeTextLayout;
