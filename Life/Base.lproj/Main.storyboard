@@ -117,11 +117,11 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学沫圆滚滚--一口盐汽水喷死你" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-Wg-cr7">
-                            <rect key="frame" x="26" y="222" width="468" height="31"/>
+                            <rect key="frame" x="26" y="233" width="468" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="31" id="Aoq-js-AHV"/>
+                                <constraint firstAttribute="height" constant="20" id="Aoq-js-AHV"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>

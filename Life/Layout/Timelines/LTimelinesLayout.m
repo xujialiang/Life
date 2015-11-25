@@ -48,9 +48,8 @@
     
     // 文本排版，计算布局
     [self _layoutName];
-//    [self _layoutProfile];
-//    [self _layoutRetweet];
-
+    [self _layoutText];
+    [self _layoutToolbar];
     
     
     // 计算高度
@@ -69,7 +68,7 @@
     _nameLayout = nil;
     
     // 字体
-    UIFont *font = [UIFont systemFontOfSize:kLCellContentTextFontSize];
+    UIFont *font = [UIFont systemFontOfSize:kLCellNameFontSize];
     
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:self.dto.user.username];
     text.font = font;
@@ -77,7 +76,7 @@
     if (text.length == 0) return;
     
     LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
-    modifier.font = [UIFont fontWithName:@"Heiti SC" size:kLCellContentTextFontSize];
+    modifier.font = [UIFont fontWithName:@"Heiti SC" size:kLCellNameFontSize];
     modifier.paddingTop = 0;
     modifier.paddingBottom = 0;
     
@@ -91,8 +90,57 @@
     _nameHeight = [modifier heightForLineCount:_nameLayout.rowCount];
 }
 
+/// 正文
+- (void)_layoutText {
+    _textHeight = 0;
+    _textLayout = nil;
+    
+    // 字体
+    UIFont *font = [UIFont systemFontOfSize:kLCellTextFontSize];
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:self.dto.content];
+    text.font = font;
+    text.color = kLCellTextNormalColor;
+    if (text.length == 0) return;
+    
+    LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
+    modifier.font = [UIFont fontWithName:@"Heiti SC" size:kLCellTextFontSize];
+    modifier.paddingTop = 10;
+    modifier.paddingBottom = 10;
+    
+    YYTextContainer *container = [YYTextContainer new];
+    container.size = CGSizeMake(kScreenWidth-100, HUGE);
+    container.linePositionModifier = modifier;
+    
+    _textLayout = [YYTextLayout layoutWithContainer:container text:text];
+    if (!_textLayout) return;
+    
+    _textHeight = [modifier heightForLineCount:_textLayout.rowCount];
+}
 
+- (void)_layoutToolbar{
+    _toolbarHeight = 15;
+    
+    UIFont *font = [UIFont systemFontOfSize:kLCellToolbarFontSize];
 
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:self.dto.dateTimeAgo];
+    text.font = font;
+    text.color = UIColorHex(727272);
+    if (text.length == 0) return;
+    
+    LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
+    modifier.font = [UIFont fontWithName:@"Heiti SC" size:kLCellToolbarFontSize];
+    modifier.paddingTop = 0;
+    modifier.paddingBottom = 0;
+    
+    YYTextContainer *container = [YYTextContainer new];
+    container.size = CGSizeMake(63, HUGE);
+    container.linePositionModifier = modifier;
+    
+    _dateTimeTextLayout = [YYTextLayout layoutWithContainer:container text:text];
+    if (!_dateTimeTextLayout) return;
+    
+}
 @end
 
 

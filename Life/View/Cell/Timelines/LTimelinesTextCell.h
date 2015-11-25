@@ -48,12 +48,13 @@
 
 
 @interface LTimelinesToolbarView : UIView
-
+@property (nonatomic,strong) LTimelinesDTO *dataDTO;
 @property (nonatomic, strong) YYLabel *timesago;
 @property (nonatomic, strong) UIImageView *isPrivate;
 @property (nonatomic, strong) YYLabel *Btndelete;
 @property (nonatomic, strong) YYLabel *BtnActions;
 
+@property (nonatomic, strong) UIView *contentView;              // 容器
 
 @property (nonatomic, weak) LTimelinesTextCell *cell;
 

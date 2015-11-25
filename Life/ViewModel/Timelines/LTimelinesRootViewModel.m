@@ -25,6 +25,8 @@
         dto.user.email = @"mail@xujialiang.net";
         
         dto.content = @"test123";
+        dto.dateTime = [NSDate date];
+        dto.dateTimeAgo = @"1小时前";
         
         LCommentDTO *commentdto = [[LCommentDTO alloc] init];
         commentdto.user = dto.user;
