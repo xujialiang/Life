@@ -102,7 +102,9 @@
 
 -(void)setDataDTO:(LTimelinesDTO *)dataDTO{
     _dataDTO = dataDTO;
-    if (dataDTO.photoURLs && dataDTO.photoURLs.count>0) {
+    [_picContainer removeFromSuperview];
+    [_gpsInfoLabel removeFromSuperview];
+    if (dataDTO.photoURLs && dataDTO.photoURLs.count>0 ) {
         _picContainer = [UIView new];
         _picContainer.left = 74;
         _picContainer.width = kScreenWidth-100;
@@ -126,6 +128,7 @@
         }else if (dataDTO.photoURLs.count>6 && dataDTO.photoURLs.count<9){
             
         }
+        
         [_contentView addSubview:_picContainer];
     }
     

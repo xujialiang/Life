@@ -30,8 +30,6 @@
     
     [self.avatar setImageURL:[NSURL URLWithString:@"https://github.com/logo.png"]];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
-    
     [self loadData];
 }
 

@@ -25,6 +25,8 @@ typedef enum LTimelinesType{
 @property (nonatomic,strong) NSString *dateTimeAgo;
 
 @property (nonatomic,strong) NSArray<NSString *> *photoURLs;
+@property (nonatomic,strong) NSArray<LUserDTO *> *notifyPerson;
+
 
 @property (nonatomic,strong) NSArray<LCommentDTO *> *comments;
 

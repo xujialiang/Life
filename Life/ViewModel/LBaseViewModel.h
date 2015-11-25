@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface LBaseViewModel : NSObject
-@property (nonatomic,strong) NSArray *showData;
+@property (nonatomic,strong) NSMutableArray *showData;
 
 @end
