@@ -128,6 +128,24 @@
         }
         [_contentView addSubview:_picContainer];
     }
+    
+    if (dataDTO.showGPS) {
+        _gpsInfoLabel = [YYLabel new];
+        _gpsInfoLabel.left = 74;
+        _gpsInfoLabel.textColor = UIColorHex(6b7292);
+        _gpsInfoLabel.width = kScreenWidth-100;
+        _gpsInfoLabel.textVerticalAlignment = YYTextVerticalAlignmentTop;
+        _gpsInfoLabel.displaysAsynchronously = YES;
+        _gpsInfoLabel.ignoreCommonProperties = YES;
+        _gpsInfoLabel.fadeOnAsynchronouslyDisplay = NO;
+        _gpsInfoLabel.fadeOnHighlight = NO;
+        _gpsInfoLabel.highlightTapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
+            //        if ([weak_self.cell.delegate respondsToSelector:@selector(cell:didClickInLabel:textRange:)]) {
+            //            [weak_self.cell.delegate cell:weak_self.cell didClickInLabel:(YYLabel *)containerView textRange:range];
+            //        }
+        };
+        [_contentView addSubview:_gpsInfoLabel];
+    }
 }
 
 - (void)setLayout:(LTimelinesLayout *)layout {
@@ -157,6 +175,11 @@
     _picContainer.top = top;
     _picContainer.height = layout.photoHeight+10;
     top += layout.photoHeight+10;
+    
+    _gpsInfoLabel.top = top;
+    _gpsInfoLabel.height = layout.gpsInfoHeight;
+    _gpsInfoLabel.textLayout = layout.gpsInfoLayout;
+    top += layout.gpsInfoHeight;
     
     _toolbarView.top = top;
     _toolbarView.height = layout.toolbarHeight;

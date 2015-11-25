@@ -50,6 +50,7 @@
     [self _layoutName];
     [self _layoutText];
     [self _layoutPhotos];
+    [self _layoutGPSInfo];
     [self _layoutToolbar];
     
     
@@ -60,6 +61,7 @@
     _height += _nameHeight;
     _height += _textHeight;
     _height += _photoHeight;
+    _height += _gpsInfoHeight;
     _height += _toolbarHeight;
     _height += _marginBottom;
 }
@@ -122,7 +124,7 @@
 }
 
 - (void)_layoutToolbar{
-    _toolbarHeight = 15;
+    _toolbarHeight = 31;
     
     UIFont *font = [UIFont systemFontOfSize:kLCellToolbarFontSize];
 
@@ -156,6 +158,32 @@
         }
     }else{
         _photoHeight = 0;
+    }
+}
+
+- (void)_layoutGPSInfo{
+    if (self.dto.showGPS) {
+        UIFont *font = [UIFont systemFontOfSize:12];
+        
+        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:self.dto.showGPS];
+        text.font = font;
+        text.color = UIColorHex(6b7692);
+        if (text.length == 0) return;
+        
+        LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
+        modifier.font = [UIFont fontWithName:@"Heiti SC" size:12];
+        modifier.paddingTop = 10;
+        modifier.paddingBottom = 10;
+        
+        YYTextContainer *container = [YYTextContainer new];
+        container.size = CGSizeMake(kScreenWidth-100, HUGE);
+        container.linePositionModifier = modifier;
+        
+        _gpsInfoLayout = [YYTextLayout layoutWithContainer:container text:text];
+        if (!_gpsInfoLayout) return;
+        
+        _gpsInfoHeight = [modifier heightForLineCount:_gpsInfoLayout.rowCount];
+
     }
 }
 @end
