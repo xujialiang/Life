@@ -32,7 +32,7 @@
 @property (nonatomic, strong) UIImageView *avatarView;          // 头像
 @property (nonatomic, strong) YYLabel *nameLabel;               // 昵称
 @property (nonatomic, strong) YYLabel *contentLabel;            // 正文
-@property (nonatomic, strong) NSArray *picViews;                // 图片 Array<UIImageView>
+@property (nonatomic, strong) UIView *picContainer;                // 图片 Array<UIImageView>
 @property (nonatomic, strong) YYLabel *gpsInfoLabel;            // GPS
 @property (nonatomic, strong) YYLabel *notifyPerson;            // 提到了谁
 

@@ -28,6 +28,8 @@
         dto.dateTime = [NSDate date];
         dto.dateTimeAgo = @"1小时前";
         
+        dto.photoURLs = @[@"https://github.com/logo.png1",@"https://github.com/logo.png",@"https://github.com/logo.png2"];
+        
         LCommentDTO *commentdto = [[LCommentDTO alloc] init];
         commentdto.user = dto.user;
         commentdto.commentText = @"这是一个评论";

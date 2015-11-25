@@ -49,7 +49,9 @@
     // 文本排版，计算布局
     [self _layoutName];
     [self _layoutText];
+    [self _layoutPhotos];
     [self _layoutToolbar];
+    
     
     
     // 计算高度
@@ -57,6 +59,7 @@
     _height += _marginTop;
     _height += _nameHeight;
     _height += _textHeight;
+    _height += _photoHeight;
     _height += _toolbarHeight;
     _height += _marginBottom;
 }
@@ -140,6 +143,20 @@
     _dateTimeTextLayout = [YYTextLayout layoutWithContainer:container text:text];
     if (!_dateTimeTextLayout) return;
     
+}
+
+- (void)_layoutPhotos{
+    if (self.dto.photoURLs && self.dto.photoURLs.count>0) {
+        if (self.dto.photoURLs.count>0 && self.dto.photoURLs.count<=3) {
+            _photoHeight = 86+10;
+        }else if (self.dto.photoURLs.count>3 && self.dto.photoURLs.count<=6){
+            _photoHeight=86*2+5+10;
+        }else if (self.dto.photoURLs.count>6 && self.dto.photoURLs.count<=9){
+            _photoHeight=86*3+5*2 +10;
+        }
+    }else{
+        _photoHeight = 0;
+    }
 }
 @end
 

@@ -55,7 +55,6 @@
     _contentView.height = 1;
     
     _avatarView = [[UIImageView alloc] init];
-    _avatarView.backgroundColor = [UIColor blackColor];
     [_contentView addSubview:_avatarView];
     
     _nameLabel = [YYLabel new];
@@ -101,6 +100,36 @@
     return self;
 }
 
+-(void)setDataDTO:(LTimelinesDTO *)dataDTO{
+    _dataDTO = dataDTO;
+    if (dataDTO.photoURLs && dataDTO.photoURLs.count>0) {
+        _picContainer = [UIView new];
+        _picContainer.left = 74;
+        _picContainer.width = kScreenWidth-100;
+        //小于3张，在一行上。
+        //4~6张 两行
+        //6张以上 三行
+        if (dataDTO.photoURLs.count>0 && dataDTO.photoURLs.count<=3) {
+            for (NSString *url in dataDTO.photoURLs) {
+                UIImageView *view = [[UIImageView alloc] init];
+                view.backgroundColor = [UIColor blackColor];
+                NSInteger index =[dataDTO.photoURLs indexOfObjectIdenticalTo:url];
+                view.left = index*(86+5);
+                view.width = 86;
+                view.height = 86;
+                [view setImageURL:[NSURL URLWithString:url]];
+                [_picContainer addSubview:view];
+            }
+            
+        }else if (dataDTO.photoURLs.count>3 && dataDTO.photoURLs.count<=6){
+            
+        }else if (dataDTO.photoURLs.count>6 && dataDTO.photoURLs.count<9){
+            
+        }
+        [_contentView addSubview:_picContainer];
+    }
+}
+
 - (void)setLayout:(LTimelinesLayout *)layout {
     _layout = layout;
     
@@ -124,6 +153,10 @@
     _contentLabel.height = layout.textHeight;
     _contentLabel.textLayout = layout.textLayout;
     top += layout.textHeight;
+    
+    _picContainer.top = top;
+    _picContainer.height = layout.photoHeight+10;
+    top += layout.photoHeight+10;
     
     _toolbarView.top = top;
     _toolbarView.height = layout.toolbarHeight;
@@ -173,9 +206,6 @@
     [_contentView addSubview:_timesago];
     
     
-    
-    
-    
     UIButton *btnComment = [UIButton buttonWithType:UIButtonTypeCustom];
     [btnComment setImage:[UIImage imageNamed:@"btnComment"] forState:UIControlStateNormal];
     [btnComment setImage:[UIImage imageNamed:@"btnComment"] forState:UIControlStateHighlighted];
@@ -185,7 +215,6 @@
     btnComment.height=15;
     btnComment.top = 0;
     [_contentView addSubview:btnComment];
-    
     
     
     return self;
