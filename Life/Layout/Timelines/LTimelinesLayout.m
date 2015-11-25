@@ -7,16 +7,17 @@
 //
 
 #import "LTimelinesLayout.h"
+#import "LTimelinesDTO.h"
 
 @interface LTimelinesLayout()
 
-@property (nonatomic,strong) LBaseDTO *dto;
+@property (nonatomic,strong) LTimelinesDTO *dto;
 
 @end
 
 @implementation LTimelinesLayout
 
-- (instancetype)initWithDTO:(LBaseDTO *)dto{
+- (instancetype)initWithDTO:(LTimelinesDTO *)dto{
     if (!dto) return nil;
     self = [super init];
     self.dto = dto;
@@ -37,7 +38,11 @@
     _marginTop = kLCellTopMargin;
     _nameHeight = 0;
     _textHeight = 0;
+    _photoHeight = 0;
+    _gpsInfoHeight = 0;
+    _fwdCardHeight = 0;
     _toolbarHeight = kLCellToolbarHeight;
+    _commentsHeight = 0;
     _marginBottom = kLCellBottomMargin;
     
     
@@ -60,8 +65,33 @@
 
 /// 名字
 - (void)_layoutName {
+    _nameHeight = 0;
+    _nameLayout = nil;
     
+    // 字体
+    UIFont *font = [UIFont systemFontOfSize:kLCellContentTextFontSize];
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:self.dto.user.username];
+    text.font = font;
+    text.color = kLCellTextNormalColor;
+    if (text.length == 0) return;
+    
+    LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
+    modifier.font = [UIFont fontWithName:@"Heiti SC" size:kLCellContentTextFontSize];
+    modifier.paddingTop = 0;
+    modifier.paddingBottom = 0;
+    
+    YYTextContainer *container = [YYTextContainer new];
+    container.size = CGSizeMake(kScreenWidth-100, HUGE);
+    container.linePositionModifier = modifier;
+    
+    _nameLayout = [YYTextLayout layoutWithContainer:container text:text];
+    if (!_nameLayout) return;
+    
+    _nameHeight = [modifier heightForLineCount:_nameLayout.rowCount];
 }
+
+
 
 @end
 

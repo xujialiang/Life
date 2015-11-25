@@ -9,7 +9,7 @@
         <scene sceneID="Zh7-Jc-kiP">
             <objects>
                 <navigationController id="jVJ-6y-NjK" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fOl-QQ-gjP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="fOl-QQ-gjP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -52,7 +52,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="99" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="4RR-6s-61r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="99" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="4RR-6s-61r">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzx-5G-ioY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view clipsSubviews="YES" contentMode="scaleToFill" id="HwA-PI-J1M" userLabel="header">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="306"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TimelinesBg" translatesAutoresizingMaskIntoConstraints="NO" id="g4V-hP-dEW">
@@ -129,14 +129,14 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="g4V-hP-dEW" secondAttribute="trailing" id="7d2-hS-xO1"/>
-                        <constraint firstAttribute="bottom" secondItem="g4V-hP-dEW" secondAttribute="bottom" constant="25" id="I7s-i4-sD2"/>
-                        <constraint firstAttribute="bottom" secondItem="vdf-Wg-cr7" secondAttribute="bottom" constant="27" id="Jvy-Wx-jMi"/>
+                        <constraint firstAttribute="bottom" secondItem="g4V-hP-dEW" secondAttribute="bottom" constant="51" id="I7s-i4-sD2"/>
+                        <constraint firstAttribute="bottom" secondItem="vdf-Wg-cr7" secondAttribute="bottom" constant="53" id="Jvy-Wx-jMi"/>
                         <constraint firstItem="58P-cH-m2m" firstAttribute="leading" secondItem="vdf-Wg-cr7" secondAttribute="trailing" constant="22" id="Qew-ZB-dlR"/>
                         <constraint firstItem="g4V-hP-dEW" firstAttribute="leading" secondItem="HwA-PI-J1M" secondAttribute="leading" id="fkQ-VM-Pik"/>
                         <constraint firstAttribute="trailing" secondItem="58P-cH-m2m" secondAttribute="trailing" constant="9" id="gqG-Pd-TzW"/>
                         <constraint firstItem="g4V-hP-dEW" firstAttribute="top" secondItem="HwA-PI-J1M" secondAttribute="top" id="qLn-sl-WTY"/>
                         <constraint firstItem="vdf-Wg-cr7" firstAttribute="leading" secondItem="HwA-PI-J1M" secondAttribute="leading" constant="26" id="tgr-NM-CCy"/>
-                        <constraint firstAttribute="bottom" secondItem="58P-cH-m2m" secondAttribute="bottom" id="uRo-EE-FVf"/>
+                        <constraint firstAttribute="bottom" secondItem="58P-cH-m2m" secondAttribute="bottom" constant="26" id="uRo-EE-FVf"/>
                     </constraints>
                 </view>
             </objects>

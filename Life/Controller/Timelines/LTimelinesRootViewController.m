@@ -30,10 +30,13 @@
     
     [self.avatar setImageURL:[NSURL URLWithString:@"https://github.com/logo.png"]];
     
+    self.tableView.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0);
+    
     [self loadData];
 }
 
 -(void)loadData{
+    self.layouts = [[NSMutableArray alloc] init];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         for (LBaseDTO *dto in self.viewModel.showData) {
@@ -53,11 +56,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     LTimelinesTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
+    cell.dataDTO = self.viewModel.showData[indexPath.row];
+    [cell setLayout:self.layouts[indexPath.row]];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    CGFloat h = (self.layouts!=nil && self.layouts.count>0)?((LTimelinesLayout *)self.layouts[indexPath.row]).height:0;
+    return h;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

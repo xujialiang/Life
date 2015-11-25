@@ -30,6 +30,16 @@
 @property (nonatomic, assign) CGFloat textHeight; //文本高度(包括下方留白)
 @property (nonatomic, strong) YYTextLayout *textLayout; //文本
 
+// 照片
+@property (nonatomic, assign) CGFloat photoHeight; //图片高度
+
+// Card
+@property (nonatomic, assign) CGFloat fwdCardHeight; //卡片高度
+
+// GPS
+@property (nonatomic, assign) CGFloat gpsInfoHeight; //文本高度(包括下方留白)
+@property (nonatomic, strong) YYTextLayout *gpsInfoLayout; //文本
+
 // 工具栏
 @property (nonatomic, assign) CGFloat toolbarHeight; // 工具栏
 @property (nonatomic, strong) YYTextLayout *dateTimeTextLayout;
@@ -39,6 +49,10 @@
 @property (nonatomic, assign) CGFloat dateTimeTextWidth;
 @property (nonatomic, assign) CGFloat deleteTextWidth;
 @property (nonatomic, assign) CGFloat commentBtnWidth;
+
+//评论高度
+@property (nonatomic, assign) CGFloat commentsHeight;
+@property (nonatomic, strong) NSArray<YYTextLayout*> *commentsLayout;
 
 // 总高度
 @property (nonatomic, assign) CGFloat height;
