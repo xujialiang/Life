@@ -206,7 +206,7 @@
         
         LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
         modifier.font = [UIFont fontWithName:@"Heiti SC" size:12];
-        modifier.paddingTop = 10;
+        modifier.paddingTop = 0;
         modifier.paddingBottom = 10;
         
         YYTextContainer *container = [YYTextContainer new];
