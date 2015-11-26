@@ -35,6 +35,9 @@
 
 // Card
 @property (nonatomic, assign) CGFloat fwdCardHeight; //卡片高度
+@property (nonatomic, assign) CGFloat fwdCardDescHeight; //卡片高度
+@property (nonatomic, strong) YYTextLayout *fwdCardDescLayout; //卡片描述
+
 
 // GPS
 @property (nonatomic, assign) CGFloat gpsInfoHeight; //文本高度(包括下方留白)

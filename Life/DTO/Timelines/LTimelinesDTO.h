@@ -16,6 +16,12 @@ typedef enum LTimelinesType{
     LTimelinesType_Forward
 }LTimelinesType;
 
+typedef enum LTimelinesCardType{
+    LTimelinesCardType_None,
+    LTimelinesCardType_WebSite,
+    LTimelinesCardType_Music
+}LTimelinesCardType;
+
 @interface LTimelinesDTO : LBaseDTO
 
 @property (nonatomic,strong) LUserDTO *user;
@@ -27,6 +33,10 @@ typedef enum LTimelinesType{
 @property (nonatomic,strong) NSArray<NSString *> *photoURLs;
 @property (nonatomic,strong) NSArray<LUserDTO *> *notifyPerson;
 
+@property (nonatomic,assign) LTimelinesCardType cardType;
+@property (nonatomic,strong) NSString *cardLinkURL;
+@property (nonatomic,strong) NSString *cardImageURL;
+@property (nonatomic,strong) NSString *cardDesc;
 
 @property (nonatomic,strong) NSArray<LCommentDTO *> *comments;
 

@@ -73,7 +73,6 @@
     };
     [_contentView addSubview:_nameLabel];
     
-    
     _contentLabel = [YYLabel new];
     _contentLabel.left = 74;
     _contentLabel.textColor = kLCellTextNormalColor;
@@ -105,6 +104,7 @@
     [_picContainer removeFromSuperview];
     [_gpsInfoLabel removeFromSuperview];
     [_notifyPerson removeFromSuperview];
+    [_cardContainer removeFromSuperview];
     if (dataDTO.photoURLs && dataDTO.photoURLs.count>0 ) {
         _picContainer = [UIView new];
         _picContainer.left = 74;
@@ -168,14 +168,28 @@
         };
         [_contentView addSubview:_notifyPerson];
     }
+    
+    if (dataDTO.cardType!=LTimelinesCardType_None) {
+        _cardContainer = [LTimelinesCardView new];
+        _cardContainer.left = 74;
+        _cardContainer.dataDTO = dataDTO;
+        [_contentView addSubview:_cardContainer];
+    }
 }
 
 - (void)setLayout:(LTimelinesLayout *)layout {
     _layout = layout;
     
     self.height = layout.height;
-    _contentView.top = layout.marginTop;
-    _contentView.height = layout.height - layout.marginTop - layout.marginBottom;
+    [_contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@0);
+        make.right.equalTo(@0);
+        make.top.equalTo(@(layout.marginTop));
+        make.bottom.equalTo(@(layout.marginBottom));
+    }];
+    
+//    _contentView.top = layout.marginTop;
+//    _contentView.height = layout.height - layout.marginTop - layout.marginBottom;
     
     [_avatarView setImageURL:[NSURL URLWithString:self.dataDTO.user.avatarUrl]];
     _avatarView.left = 20;
@@ -195,8 +209,13 @@
     top += layout.textHeight;
     
     _picContainer.top = top;
-    _picContainer.height = layout.photoHeight+10;
-    top += layout.photoHeight+10;
+    _picContainer.height = layout.photoHeight;
+    top += layout.photoHeight;
+    
+    _cardContainer.top = top;
+    _cardContainer.height = layout.fwdCardHeight;
+    [_cardContainer setWithLayout:layout];
+    top += layout.fwdCardHeight;
     
     _gpsInfoLabel.top = top;
     _gpsInfoLabel.height = layout.gpsInfoHeight;
@@ -274,5 +293,67 @@
 - (void)setWithLayout:(LTimelinesLayout *)layout{
     _timesago.height=layout.toolbarHeight;
     _timesago.textLayout = layout.dateTimeTextLayout;
+}
+@end
+
+
+@implementation LTimelinesCardView
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (frame.size.width == 0 && frame.size.height == 0) {
+        frame.size.width = kScreenWidth-100;
+        frame.size.height = 1;
+    }
+    self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor clearColor];
+    self.exclusiveTouch = YES;
+    @weakify(self);
+    
+    _contentView = [[UIView alloc] init];
+    [self addSubview:_contentView];
+
+    UIView *bgcolor = [[UIView alloc] init];
+    bgcolor.top = 0;
+    bgcolor.left=0;
+    bgcolor.width = self.width;
+    bgcolor.height = 50;
+    bgcolor.backgroundColor =UIColorHex(f3f3f5);
+    [_contentView addSubview:bgcolor];
+    
+    _desc = [YYLabel new];
+    _desc.left = 50;
+    _desc.width = kScreenWidth -100 - 50 -12;
+    _desc.backgroundColor = [UIColor redColor];
+    _desc.textColor = UIColorHex(727272);
+    _desc.textVerticalAlignment = YYTextVerticalAlignmentTop;
+    _desc.displaysAsynchronously = YES;
+    _desc.ignoreCommonProperties = YES;
+    _desc.fadeOnAsynchronouslyDisplay = NO;
+    _desc.fadeOnHighlight = NO;
+    _desc.lineBreakMode = NSLineBreakByTruncatingTail;
+    _desc.numberOfLines = 2;
+    _desc.highlightTapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect) {
+        //        if ([weak_self.cell.delegate respondsToSelector:@selector(cell:didClickInLabel:textRange:)]) {
+        //            [weak_self.cell.delegate cell:weak_self.cell didClickInLabel:(YYLabel *)containerView textRange:range];
+        //        }
+    };
+    [_contentView addSubview:_desc];
+    
+    _leftImage = [[UIImageView alloc] init];
+    _leftImage.left = 5;
+    _leftImage.top = 5;
+    _leftImage.width = 40;
+    _leftImage.height = 40;
+    [_contentView addSubview:_leftImage];
+    
+    return self;
+}
+
+
+- (void)setWithLayout:(LTimelinesLayout *)layout{
+    [_leftImage setImageURL:[NSURL URLWithString:self.dataDTO.user.avatarUrl]];
+    _desc.height=layout.fwdCardDescHeight;
+    _desc.top = (50-layout.fwdCardDescHeight)/2;
+    _desc.textLayout = layout.fwdCardDescLayout;
 }
 @end

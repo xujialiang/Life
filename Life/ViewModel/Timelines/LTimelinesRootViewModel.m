@@ -51,6 +51,11 @@
     
     dto.notifyPerson = @[dto.user,dto.user,dto.user];
     
+    dto.cardType = LTimelinesCardType_WebSite;
+    dto.cardDesc = @"这是一条描述这是一条描述这是一条描述这是一条描述这是一条描述这是一条描述这是一条描述这是一条描述这是一条描述";
+    dto.cardImageURL = @"https://github.com/logo.png";
+    dto.cardLinkURL = @"http://baidu.com";
+    
     LCommentDTO *commentdto = [[LCommentDTO alloc] init];
     commentdto.user = dto.user;
     commentdto.commentText = @"这是一个评论";

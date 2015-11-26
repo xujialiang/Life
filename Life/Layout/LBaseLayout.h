@@ -17,6 +17,8 @@
 #define kLCellNameFontSize 15
 #define kLCellTextFontSize 16
 #define kLCellToolbarFontSize 13
+#define kLCellCardFontSize 14
+
 
 #define kLCellContentTextFontSize 17
 #define kLCellCardDescFontSize 16 // 卡片描述文本字体大小

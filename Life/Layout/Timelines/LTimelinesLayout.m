@@ -51,6 +51,7 @@
     [self _layoutName];
     [self _layoutText];
     [self _layoutPhotos];
+    [self _layoutCard];
     [self _layoutGPSInfo];
     [self _layoutNotifyPerson];
     [self _layoutToolbar];
@@ -62,6 +63,7 @@
     _height += _nameHeight;
     _height += _textHeight;
     _height += _photoHeight;
+    _height += _fwdCardHeight;
     _height += _gpsInfoHeight;
     _height += _notifyPersonHeight;
     _height += _toolbarHeight;
@@ -161,6 +163,33 @@
     }else{
         _photoHeight = 0;
     }
+}
+
+- (void)_layoutCard{
+    _fwdCardHeight = 60;
+    _fwdCardDescLayout = nil;
+    
+    // 字体
+    UIFont *font = [UIFont systemFontOfSize:kLCellCardFontSize];
+    
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:self.dto.cardDesc];
+    text.font = font;
+    text.color = kLCellTextNormalColor;
+    if (text.length == 0) return;
+    
+    LTextLinePositionModifier *modifier = [LTextLinePositionModifier new];
+    modifier.font = [UIFont fontWithName:@"Heiti SC" size:kLCellCardFontSize];
+    modifier.paddingTop = 5;
+    modifier.paddingBottom = 5;
+    
+    YYTextContainer *container = [YYTextContainer new];
+    container.size = CGSizeMake(kScreenWidth-100-50-12, HUGE);
+    container.linePositionModifier = modifier;
+    
+    _fwdCardDescLayout = [YYTextLayout layoutWithContainer:container text:text];
+    if (!_fwdCardDescLayout) return;
+    
+    _fwdCardDescHeight = [modifier heightForLineCount:_fwdCardDescLayout.rowCount>2?2:1];
 }
 
 - (void)_layoutGPSInfo{

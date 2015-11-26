@@ -26,13 +26,15 @@
 
 
 @class LTimelinesToolbarView;
+@class LTimelinesCardView;
 @interface LTimelinesView : UIView
 @property (nonatomic,strong) LTimelinesDTO *dataDTO;
 @property (nonatomic, strong) UIView *contentView;              // 容器
 @property (nonatomic, strong) UIImageView *avatarView;          // 头像
 @property (nonatomic, strong) YYLabel *nameLabel;               // 昵称
 @property (nonatomic, strong) YYLabel *contentLabel;            // 正文
-@property (nonatomic, strong) UIView *picContainer;                // 图片 Array<UIImageView>
+@property (nonatomic, strong) UIView *picContainer;             // 图片
+@property (nonatomic, strong) LTimelinesCardView *cardContainer;// 分享
 @property (nonatomic, strong) YYLabel *gpsInfoLabel;            // GPS
 @property (nonatomic, strong) YYLabel *notifyPerson;            // 提到了谁
 
@@ -56,6 +58,17 @@
 
 @property (nonatomic, strong) UIView *contentView;              // 容器
 
+@property (nonatomic, weak) LTimelinesTextCell *cell;
+
+- (void)setWithLayout:(LTimelinesLayout *)layout;
+@end
+
+//卡片
+@interface LTimelinesCardView : UIView
+@property (nonatomic,strong) LTimelinesDTO *dataDTO;
+@property (nonatomic, strong) UIView *contentView;              // 容器
+@property (nonatomic, strong) UIImageView *leftImage;
+@property (nonatomic,strong) YYLabel *desc;
 @property (nonatomic, weak) LTimelinesTextCell *cell;
 
 - (void)setWithLayout:(LTimelinesLayout *)layout;
